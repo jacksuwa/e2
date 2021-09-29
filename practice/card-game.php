@@ -12,8 +12,8 @@ $cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 foreach ($cards as $card) {
     shuffle($cards);
     if (count($cards) != 0) {
-        $playerCards = array_shift($cards);
-        $computerCards = array_shift($cards);
+        $playerCards = array_pop($cards);
+        $computerCards = array_pop($cards);
         var_dump("player1");
         var_dump($playerCards);
         var_dump("computerCard");
