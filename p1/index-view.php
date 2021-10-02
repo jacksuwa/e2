@@ -17,7 +17,14 @@
 
     <h2>Results</h2>
     <ul>
-        <li>...</li>
+        <li>Player A flipped <?php echo $playerA ?>
+        </li>
+        <li>Player B defaults to <?php echo $playerB ?>
+        </li>
+        <li> The coin landed on <?php echo $flip ?>
+        </li>
+        <li>The winner is <?php echo $winner ?>
+        </li>
     </ul>
 </body>
 
