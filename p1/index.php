@@ -1,24 +1,28 @@
 <?php
+#Rock, Paper, Scissors Game
 
-//+ Create an array, with three elements: Rock, Paper or Scissors
-$moves = ['rock', 'paper', 'scissors'];
-$player1Move = $moves[rand(0, 2)];
-$player2Move = $moves[rand(0, 2)];
+$moves = ['Rock', 'Paper', 'Scissors'];
+$playerAMove = $moves[rand(0, 2)];
+$playerBMove = $moves[rand(0, 2)];
 
-var_dump($player1Move);
-var_dump($player2Move);
-
-if ($player1Move == $player2Move) {
-    var_dump('Tie');
-} elseif ($player1Move == 'rock' and $player2Move == 'paper') {
-    var_dump("Player 2 is the Winner");
-} elseif ($player1Move == 'rock' and $player2Move == 'scissors') {
-    var_dump('Player 1 Wins');
-} elseif ($player1Move == 'paper' and $player2Move == 'rock') {
-    var_dump('Player 1 Wins');
-} elseif ($player1Move == 'paper' and $player2Move == 'scissors') {
-    var_dump('Player 2 Wins');
+//create a variable to store result
+$result = "";
+if ($playerAMove == $playerBMove) {
+    $result = 'Tie';
+} elseif ($playerAMove == 'Rock' and $playerBMove == 'Paper') {
+    $result = 'Player B';
+} elseif ($playerAMove == 'Rock' and $playerBMove == 'Scissors') {
+    $result = 'Player A';
+} elseif ($playerAMove == 'Paper' and $playerBMove == 'Rock') {
+    $result = 'Player A';
+} elseif ($playerAMove == 'Paper' and $playerBMove == 'Scissors') {
+    $result = 'Player B';
+} elseif ($playerAMove == 'Scissors' and $playerBMove == 'Paper') {
+    $result = 'Player A';
+} elseif ($playerAMove == 'Scissors' and $playerBMove == 'Rock') {
+    $result = 'Player B';
 }
+
 
 
 require 'index-view.php';

@@ -9,8 +9,7 @@
 + A tie is declared if both players chooses the same random element 
 + Otherwise: Winner is based on element selected by Player A or Player B.  
 + Element Rock beats Scissors, Scissors beats Paper, Paper beats Rock. 
-+ In the view, show the results of Player a's move, player b's move and the winner 
-
++ In the view, show the results of Player A's move, player B's move and the winner 
 
 ## Outside resources
 
