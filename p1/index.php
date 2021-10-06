@@ -7,6 +7,8 @@ $playerBMove = $moves[rand(0, 2)];
 
 //create a variable to store result
 $result = "";
+
+//Compare the element selected by Player A and Player B and decide the winner or tie
 if ($playerAMove == $playerBMove) {
     $result = 'Tie';
 } elseif ($playerAMove == 'Rock' and $playerBMove == 'Paper') {
@@ -22,7 +24,5 @@ if ($playerAMove == $playerBMove) {
 } elseif ($playerAMove == 'Scissors' and $playerBMove == 'Rock') {
     $result = 'Player B';
 }
-
-
 
 require 'index-view.php';

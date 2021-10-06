@@ -4,7 +4,6 @@
 <head>
     <title>Project 1 - Rock, Paper, Scissors</title>
     <meta charset='utf-8'>
-    <link href=data:, rel=icon>
     <link rel="stylesheet" href="styles/p1.css" />
 </head>
 
@@ -35,6 +34,5 @@
     </ul>
 
 </body>
-
 
 </html>
