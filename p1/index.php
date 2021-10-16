@@ -1,6 +1,7 @@
 <?php
 #Rock, Paper, Scissors Game
 
+
 $moves = ['Rock', 'Paper', 'Scissors'];
 $playerAMove = $moves[rand(0, 2)];
 $playerBMove = $moves[rand(0, 2)];
