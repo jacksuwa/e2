@@ -2,12 +2,13 @@
 
 session_start();
 
+# Player’s guess
 $answer = $_POST['answer'];
 
+# Word they’re trying to guess
 $word = $_SESSION['word'];
 
 $haveAnswer = true;
-
 
 if ($answer == '') {
     $haveAnswer = false;
@@ -17,12 +18,12 @@ if ($answer == '') {
     $correct = false;
 }
 
-
+# Store results in the session
 $_SESSION['results'] = [
     'haveAnswer' => $haveAnswer,
-    'correct' => $correct
+    'correct' => $correct,
+    'answer' => $answer,
 ];
 
-//var_dump($_SESSION);
-
+# Redirect them back to the index page to see the results and have the option to play again
 header('Location: index.php');
