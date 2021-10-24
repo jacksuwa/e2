@@ -2,29 +2,29 @@
 
 class Person
 {
+    public $firstName;
+    public $lastName;
+    public $age;
 
-    public string $firstName;
-    public string $lastName;
-    public int $age;
-
-    public function __construct($firstName, $lastName, $age)
+    public function __construct(string $firstName, string $lastName, int $age)
     {
         $this->firstName = $firstName;
         $this->lasttName = $lastName;
         $this->age = $age;
     }
 
-    function getFullName()
+    public function getFullName()
     {
         return   $this->firstName . ' ' . $this->lasttName;
     }
 
-    function  getClaassification()
+    public function getClassification()
     {
-        if ($this->age >= 18) {
-            echo 'adult';
-        } else {
-            echo 'minor';
-        }
+        // if ($this->age >= 18) {
+        //     return 'adult';
+        // } else {
+        //     return 'minor';
+        // }
+        return ($this->age >= 18) ? 'adult' : 'minor';
     }
 }

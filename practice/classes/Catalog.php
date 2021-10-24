@@ -13,18 +13,17 @@ class Catalog
         $this->products = json_decode($json, true);
     }
 
-    function getAll()
+    public function getAll()
     {
         return $this->products;
     }
 
-    function getById(int $id)
+    public function getById(int $id)
     {
-
         return $this->products[$id];
     }
 
-    function searchByName(string $term)
+    public function searchByName(string $term)
     {
         $results = [];
         foreach ($this->products as $product) {
