@@ -20,3 +20,4 @@ if ($choice == $moves[0] and $computer == $moves[1]) {
     var_dump($computer);
     var_dump('Tis a tie!');
 }
+//
