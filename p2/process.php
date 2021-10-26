@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $choice = $_POST['choice'];
 
 
@@ -8,16 +10,25 @@ $computer = $moves[rand(0, 2)];
 
 
 if ($choice == $moves[0] and $computer == $moves[1]) {
-    var_dump($choice);
-    var_dump($computer);
-    var_dump('Computer wins :(');
+    $gameResult = 'Computer wins';
 } elseif ($choice == $moves[0] and $computer == $moves[2]) {
-    var_dump($choice);
-    var_dump($computer);
-    var_dump('You win!');
+    $gameResult = 'You win';
 } elseif ($choice == $moves[0] and $computer == $moves[0]) {
-    var_dump($choice);
-    var_dump($computer);
-    var_dump('Tis a tie!');
+    $gameResult = 'Tis a tie';
+} elseif ($choice == $moves[1] and $computer == $moves[0]) {
+    $gameResult = 'You win';
+} elseif ($choice == $moves[1] and $computer == $moves[2]) {
+    $gameResult = 'Computer wins';
+} elseif ($choice == $moves[1] and $computer ==  $moves[1]) {
+    $gameResult = 'Tis a tie';
 }
-//
+
+$_SESSION['results'] = [
+
+    'computer' => $computer,
+    'choice' => $choice,
+    'gameResult' =>  $gameResult
+
+];
+
+header('Location: index.php');
