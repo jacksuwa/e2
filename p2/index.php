@@ -1,5 +1,6 @@
 <?php
 
+//need to update section
 session_start();
 
 if (isset($_SESSION['results'])) {

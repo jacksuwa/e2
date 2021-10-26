@@ -8,7 +8,7 @@ $choice = $_POST['choice'];
 $moves = ['rock', 'paper', 'scissors'];
 $computer = $moves[rand(0, 2)];
 
-
+//retest 
 if ($choice == $moves[0] and $computer == $moves[1]) {
     $gameResult = 'Computer wins';
 } elseif ($choice == $moves[0] and $computer == $moves[2]) {

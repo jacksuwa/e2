@@ -16,7 +16,7 @@
         <button type='submit'>Play</button>
 
     </form>
-
+    <!-- check this !-->
     <?php if (isset($results)) { ?>
     <h2>Results</h2>
     The computer chose <?php echo $computer ?>
