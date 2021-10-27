@@ -11,7 +11,7 @@
 <body>
     <h1>Project 2 - Rock, Paper, Scissors</h1>
 
-    <h2>Mechanics</h2>
+    <h2>Instructions</h2>
     <ul>
         <li>
             Player A (You) and Player B (Computer) select between items: Rock, Paper or Scissors.
@@ -24,7 +24,7 @@
         </li>
     </ul>
 
-    <img alt='Rock, Paper, Scissors' src='images/rock-paper-scissor.png'>
+    <img alt='Rock, Paper, Scissors' src='images/rock-paper-scissors.png'>
 
 
     <form method='POST' action='process.php'>
