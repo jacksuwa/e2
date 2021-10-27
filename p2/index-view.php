@@ -24,6 +24,8 @@
         </li>
     </ul>
 
+    <img alt='Rock, Paper, Scissors' src='images/rock-paper-scissor.png'>
+
 
     <form method='POST' action='process.php'>
         <input type='radio' id='rock' name='choice' value='rock'
