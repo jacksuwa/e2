@@ -1,18 +1,15 @@
 <?php
 
-//need to update section
 session_start();
 
 if (isset($_SESSION['results'])) {
     $results = $_SESSION['results'];
-    $computer = $results['computer'];
     $choice = $results['choice'];
+    $computer = $results['computer'];
     $gameResult = $results['gameResult'];
 
-    var_dump($computer);
-    var_dump($choice);
-    var_dump($gameResult);
-}
 
+    $_SESSION['results'] = null;
+}
 
 require 'index-view.php';
