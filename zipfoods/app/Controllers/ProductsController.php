@@ -6,16 +6,10 @@ use App\Products;
 
 class ProductsController extends Controller
 {
-    private $productObj;
-    public function __construct($app)
-    {
-        parent::__construct($app);
-        $this->productObj = new Products($this->app->path('/database/products.json'));
-    }
     public function index()
     {
-        //dump($productObj);
-        $products = $this->productObj->getAll();
+        $products = $this->app->db()->all('products');
+
         return $this->app->view('products/index', ['products' => $products]);
     }
 
@@ -27,38 +21,81 @@ class ProductsController extends Controller
             $this->app->redirect('/products');
         }
 
-        $product =   $this->productObj->getBySku($sku);
+        $productQuery = $this->app->db()->findByColumn('products', 'sku', '=', $sku);
 
-        //this maybe part of the assisgnment
-        if (is_null($product)) {
-            return $this->app->view('products/missing'); //this is where you will add the page for the assignment
+        if (empty($productQuery)) {
+            return $this->app->view('products/missing');
+        } else {
+            $product = $productQuery[0];
         }
 
         $reviewSaved = $this->app->old('reviewSaved');
 
+        $reviews = $this->app->db()->findByColumn('reviews', 'product_id', '=', $product['id']);
+
         return $this->app->view('products/show', [
             'product' => $product,
-            'reviewSaved' => $reviewSaved
+            'reviewSaved' => $reviewSaved,
+            'reviews' => $reviews
         ]);
     }
 
+   
+    public function new()
+    {
+        $productSaved = $this->app->old('productSaved');
+        $sku = $this->app->old('sku');
+
+        return $this->app->view('products/new', [
+            'productSaved' => $productSaved,
+            'sku' => $sku,
+        ]);
+    }
+
+    public function save()
+    {
+        $this->app->validate([
+            'name' => 'required',
+            'sku' => 'required|alphaNumericDash',
+            'description' => 'required',
+            'price' => 'required|numeric',
+            'available' => 'required|numeric',
+            'weight' => 'required|numeric'
+        ]);
+
+        $this->app->db()->insert('products', $this->app->inputAll());
+
+        $this->app->redirect('/products/new', [
+            'productSaved' => true,
+            'sku' => $this->app->input('sku')
+        ]);
+    }
     public function saveReview()
     {
         $this->app->validate([
             'sku' => 'required',
+            'product_id' => 'required',
             'name' => 'required',
             'review' => 'required|minLength:200'
         ]);
-        # If the above validation fails 
-        # The user is redirected back to where they came from (/products)
-        # None of the code that follows will work 
 
+        # If the above validation checks fail
+        # The user is redirected back to where they came from (/product)
+        # None of the code that follows will be executed
+
+        $product_id = $this->app->input('product_id');
         $sku = $this->app->input('sku');
         $name = $this->app->input('name');
         $review = $this->app->input('review');
 
-        # Todo: Perist review to database...
+        # Todo: Persist review to the database...
+        $this->app->db()->insert('reviews', [
+            'product_id' => $product_id,
+            'name' => $name,
+            'review' => $review
+        ]);
 
         return $this->app->redirect('/product?sku=' . $sku, ['reviewSaved' => true]);
     }
+
 }

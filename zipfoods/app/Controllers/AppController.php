@@ -9,21 +9,20 @@ class AppController extends Controller
      */
     public function index()
     {
-
-
         return $this->app->view('index');
     }
+
     public function contact()
     {
         return $this->app->view('contact', [
             'email' => 'support@zipfoods.com'
         ]);
     }
+
     public function about()
     {
         return $this->app->view('about');
     }
-    # src/Controllers/AppController.php
 
     public function practice()
     {
@@ -33,7 +32,7 @@ class AppController extends Controller
         $username = $this->app->env('DB_USERNAME');
         $password = $this->app->env('DB_PASSWORD');
 
-        # DSN (Data Source Name) string
+        # DSN (Data  Source Name) string
         # contains the information required to connect to the database
         $dsn = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 
@@ -51,6 +50,8 @@ class AppController extends Controller
             throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
 
+
+        # Example 1
         # Write a SQL query
         $sql = "SELECT * FROM products ORDER BY sku";
 
@@ -61,7 +62,8 @@ class AppController extends Controller
         # https://www.php.net/manual/en/pdostatement.fetchall.php
         dump($statement->fetchAll());
 
-        #Example 2
+
+        # Example 2
         $sql = "INSERT INTO products (name, sku, description, price, available, weight, perishable) 
         VALUES (
             'Driscoll’s Strawberries', 
@@ -74,8 +76,9 @@ class AppController extends Controller
 
         $pdo->query($sql);
 
+        # Example 3
         $sqlTemplate = "INSERT INTO products (name, sku, description, price, available, weight, perishable) 
-VALUES (:name, :sku, :description, :price, :available, :weight, :perishable)";
+            VALUES (:name, :sku, :description, :price, :available, :weight, :perishable)";
 
         $values = [
             'name' => 'Driscoll’s Strawberries',
