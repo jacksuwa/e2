@@ -1,7 +1,7 @@
 @extends('templates/master')
 
 @section('title')
-Product Not Foun
+Product Not Found
 
 @endsection
 
