@@ -9,11 +9,11 @@ $computer = $moves[rand(0, 2)];
 
 if ($choice == $computer) {
     $gameResult = 'Tie';
-} elseif ($choice == $moves[0] and $computer == $moves[1]) {
+} elseif ($choice == 'rock' and $computer == 'paper') {
     $gameResult = 'Computer wins';
-} elseif ($choice == $moves[1] and $computer == $moves[2]) {
+} elseif ($choice == 'paper' and $computer == 'scissors') {
     $gameResult = 'Computer wins';
-} elseif ($choice ==  $moves[2] and $computer == $moves[0]) {
+} elseif ($choice ==  'scissors' and $computer == 'rock') {
     $gameResult = 'Computer wins';
 } elseif ($choice == $moves[0] and $computer == $moves[2]) {
     $gameResult = 'You win';

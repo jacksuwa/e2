@@ -1,3 +1,17 @@
 #logo {
     width:300px;
 }
+/*please remove*/
+.results{
+font-weight: bold;
+margin:20px
+}
+.won{
+    color:green;
+}
+.tie{
+    color:purple;
+}
+.lost{
+    color:red;
+}
