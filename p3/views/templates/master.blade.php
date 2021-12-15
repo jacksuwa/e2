@@ -22,6 +22,9 @@
     <header>
         <h1>{{ $app->config('app.name') }}</h1>
     </header>
+    <a href='/'>
+        <img alt='Rock, Paper, Scissors' src='images/rock-paper-scissors.png'>
+    </a>
 
     <main>
         @yield('content')

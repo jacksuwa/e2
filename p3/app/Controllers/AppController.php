@@ -73,6 +73,8 @@ class AppController extends Controller
         }
 
         $count = $winCount + $tieCount + $lostCount;
+        $winPercent = $winCount / $count;
+        $percentFormated = number_format($winPercent * 100, 2) . '%';
 
 
         return $this->app->view('history', [
@@ -81,6 +83,7 @@ class AppController extends Controller
             'tieCount' => $tieCount,
             'lostCount' => $lostCount,
             'count' => $count,
+            'percentFormated' => $percentFormated,
         ]);
     }
 
