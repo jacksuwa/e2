@@ -48,8 +48,6 @@ class AppController extends Controller
             'timestamp' => date('Y-m-d H:i:s')
         ]);
 
-
-
         return $this->app->redirect('/', ['choice' => $choice, 'computer' => $computer, 'result' => $result]);
     }
 
@@ -89,6 +87,10 @@ class AppController extends Controller
 
     public function round()
     {
+        $this->app->validate([
+            'id' => 'required',
+        ]);
+
         $id = $this->app->param('id');
         $round = $this->app->db()->findById('rounds', $id);
 

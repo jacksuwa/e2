@@ -14,8 +14,8 @@ class AppCommand extends Command
     public function migrate()
     {
         $this->app->db()->createTable('rounds', [
-            'choice' => 'varchar(14)',
-            'computer' => 'varchar(14)',
+            'choice' => 'varchar(44)',
+            'computer' => 'varchar(44)',
             'result' => 'varchar(44)',
             'timestamp' => 'timestamp',
         ]);
@@ -25,8 +25,8 @@ class AppCommand extends Command
 
     public function seed()
     {
-        # Instantiate a new instance of the Faker\Factory class
-        $faker = \Faker\Factory::create();
+        # Instantiate a new instance of the Faker class
+        $faker = Factory::create();
 
         # Use a loop to create 10 past rounds
         for ($i = 10; $i > 0; $i--) {
@@ -46,7 +46,7 @@ class AppCommand extends Command
             }
 
 
-            # Set up a round
+            # Set up a round and use faker method
             $round = [
                 'choice' => $choice,
                 'computer' => $computer,

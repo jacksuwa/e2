@@ -8,7 +8,7 @@
 + [ ] I am taking this course for undergraduate credit and have opted out of integrating testing into my application
 
 ## Outside resources
-n/a
+Photo source: [Andy Grunwald Blog](https://andygrunwald.com/blog/playing-rockpaperscissors-with-500-people/)
 
 ## Notes for instructor
 n/a

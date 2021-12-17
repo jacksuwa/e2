@@ -2,11 +2,19 @@
 
 @section('title')
     Round Details
-
 @endSection
 
 @section('content')
     <h2>Round Details</h2>
+
+    @if ($app->errorsExist())
+        <ul test='validation-output' class='error alert alert-danger'>
+            @foreach ($app->errors() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
+
     <ul>
         <li>Round id: {{ $round['id'] }}</li>
         <li>Palyer's choice: {{ $round['choice'] }}</li>

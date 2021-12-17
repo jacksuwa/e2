@@ -34,7 +34,6 @@
         </ul>
     @endif
 
-
     @if ($choice)
         <div test='results-div' class='results'>Computer chose <span test='computer-choice'>{{ $computer }}</span>. You
             chose <span test='player-choice'> {{ $choice }}</span>.
