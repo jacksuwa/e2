@@ -45,7 +45,6 @@ class AppCommand extends Command
                 $result = ($computer == 'rock') ? 'lost' : 'won';
             }
 
-
             # Set up a round and use faker method
             $round = [
                 'choice' => $choice,

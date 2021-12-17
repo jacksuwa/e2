@@ -8,7 +8,7 @@
 + [ ] I am taking this course for undergraduate credit and have opted out of integrating testing into my application
 
 ## Outside resources
-Photo source: [Andy Grunwald Blog](https://andygrunwald.com/blog/playing-rockpaperscissors-with-500-people/)
+Photo source: [Andy Grunwald](https://andygrunwald.com/blog/playing-rockpaperscissors-with-500-people/)
 
 ## Notes for instructor
 n/a
@@ -39,8 +39,8 @@ Scenario --
  I grab text from "[test=player-choice]"
  I grab text from "[test=computer-choice]"
  Player choose: rock
- Computer choose: paper
- I see element "[test=lost-output]"
+ Computer choose: rock
+ I see element "[test=tie-output]"
  PASSED 
 
 P3Cest: Shows history and round details
@@ -49,10 +49,10 @@ Test: tests/acceptance/P3Cest.php:showsHistoryAndRoundDetails
 Scenario --
  I am on page "/history"
  I grab multiple "[test=round-link]"
- I assert greater than or equal 10,11
+ I assert greater than or equal 10,21
  I grab text from "[test=round-link]"
- I click "2021-12-14 15:43:04"
- I see "2021-12-14 15:43:04"
+ I click "2021-12-16 23:24:27"
+ I see "2021-12-16 23:24:27"
  PASSED 
 
 P3Cest: Validate form
@@ -67,7 +67,7 @@ Scenario --
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Time: 00:00.511, Memory: 12.00 MB
+Time: 00:00.547, Memory: 12.00 MB
 
 OK (4 tests, 8 assertions)
 
