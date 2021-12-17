@@ -1,7 +1,7 @@
 @extends('templates/master')
 
 @section('title')
-    Round History
+    Game History
 @endSection
 
 @section('content')
